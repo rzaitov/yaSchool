@@ -62,3 +62,11 @@
 	background-color: #0D2E4C;
 	color: #FFC76D !important;
 }
+
+.fotoContainer {
+	width: 200px;
+	float: left;
+}
+.foto {
+	max-width: 100%;
+}

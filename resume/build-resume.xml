@@ -29,6 +29,11 @@
 			<fileset dir="libs"/>
 		</copy>
 
+		<copy todir="${build}/foto">
+			<fileset dir="foto"/>
+		</copy>
+
+
 	</target>
 
 	<target name="build" description="Concatenate all js files" depends="init">
