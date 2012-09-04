@@ -57,7 +57,7 @@ function Navigator(sb, navigationContainer, sectionContainer) {
 		return false;
 	});
 
-	$(document).scroll(function() {
+	$(window).scroll(function() {
 		var len = sortedSectionItems.length;
 		if(!isCurSectionDetectionEnabled || len === 0)
 		{

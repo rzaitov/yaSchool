@@ -38,7 +38,7 @@ function TopJumper (sb, rootDom) {
 		scrollTop >= 200 ? this.show() : this.hide();
 	};
 
-	$(document).scroll(function(eventObject) {
+	$(window).scroll(function(eventObject) {
 		that.updateView();
 	});
 
