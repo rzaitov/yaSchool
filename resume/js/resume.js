@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	// Объявляем зависимости
 	var createPictureSlider = sandBox.ui.createPictureSlider;
+	var PrintWidget = sandBox.PrintWidget;
 
 	var topJumperContainer = $('.topJumperContainer')[0];
 	var topJumper = new TopJumper(sandBox, topJumperContainer);
@@ -19,4 +20,7 @@ $(document).ready(function() {
 	{
 		pictureSliderProxy.addImage(images[i]);
 	}
+
+	var printWidgetContainer = $('.printButtonContainer')[0];
+	var printWidget = new PrintWidget(sandBox, printWidgetContainer);
 });

@@ -4,10 +4,13 @@
 <head>
 	<title></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link type="text/css" href="./css/print.css" rel="stylesheet" media="print">
+
 	<link type="text/css" href="./css/reset.css" rel="stylesheet">
 	<link type="text/css" href="./css/resume.css" rel="stylesheet">
 	<link type="text/css" href="./css/top-jumper.css" rel="stylesheet">
 	<link type="text/css" href="./css/picture-slider.css" rel="stylesheet">
+	<link type="text/css" href="./css/print-button.css" rel="stylesheet">
 
 	<!-- Libs -->
 	<script type="text/javascript" src="libs/jquery-1.7.2.js"></script>
@@ -18,9 +21,10 @@
 	{{Templates}}
 </head>
 <body>
-	<div class="topJumperContainer">
+	<div class="topJumperContainer noPrint">
 	</div>
-	<div class="navigation">
+	<div class="navigation noPrint">
+		<div class="printButtonContainer"></div>
 		<div class="navSection">
 			<a class="navSectionTitle" href="#general">Общие вопросы</a>
 			<a class="navSubSection" href="#general_fio">Ф.И.О</a>
@@ -45,11 +49,9 @@
 			<a class="navSubSection" href="#skill_bugTracker">Системы постановки задач</a>
 			<a class="navSubSection" href="#skill_resources">Полезные ресурсы</a>
 			<a class="navSubSection" href="#skill_work">Предыдущая работа</a>
-
-
 		</div>
 	</div>
-	<div class="sectionContainer">
+	<div class="sectionContainer printContentArea">
 		<div class="section">
 			<div class="sectionTitle" id="general">Общие вопросы</div>
 
@@ -152,9 +154,8 @@
 				<div class="subsectionValue"></div>
 			</div>
 		</div>
-
 	</div>
-	<div class="photoSection">
+	<div class="photoSection noPrint">
 		<div class="rawImages">
 			<div class="photoContainer"><img src="photo/photo0.jpg" class="photo"></div>
 			<div class="photoContainer"><img src="photo/photo9.jpg" class="photo"></div>
@@ -169,15 +170,5 @@
 		</div>
 		<div class="pictureSliderContainer"></div>
 	</div>
-	<div class="big">
-
-	</div>
 </body>
 </html>
-		<!--
-			<div class="subsection">
-				<div class="subsectionTitle"></div>
-				<div class="subsectionValue"></div>
-			</div>
-
-		-->

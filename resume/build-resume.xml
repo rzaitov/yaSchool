@@ -20,6 +20,7 @@
 			<fileset dir="css"/>
 			<fileset dir="top-jumper/css"/>
 			<fileset dir="picture-slider-widget/css"/>
+			<fileset dir="print-button-widget/css"/>
 		</copy>
 
 		<copy todir="${build}/img">
@@ -43,6 +44,7 @@
 			<filelist dir="js" files="Sandbox.js,Sandbox-Log.js"/>
 			<filelist dir="picture-slider-widget" files="picture-slider.js"/>
 			<filelist dir="top-jumper" files="top-jumper.js"/>
+			<filelist dir="print-button-widget" files="print-button.js"/>
 
 			<filelist dir="js" files="navigator.js, resume.js"/>
 		</concat>
@@ -68,6 +70,7 @@
 		<concat destfile="${build}/templates.html" fixlastline="yes" encoding="UTF-8">
 			<fileset dir="top-jumper/tmpl"/>
 			<fileset dir="picture-slider-widget/tmpl"/>
+			<fileset dir="print-button-widget/tmpl"/>
 		</concat>
 
 		<loadfile property="templates" srcFile="${build}/templates.html" encoding="UTF-8"/>
