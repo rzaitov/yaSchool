@@ -20,11 +20,9 @@ body {
 .printContentArea {
 	width: 100% !important;
 }
-/*
 .section {
 	page-break-after:always;
 }
-*/
 .subsection {
 	page-break-inside: avoid;
 }
