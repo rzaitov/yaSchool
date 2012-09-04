@@ -19,18 +19,20 @@
 		<copy todir="${build}/css">
 			<fileset dir="css"/>
 			<fileset dir="top-jumper/css"/>
+			<fileset dir="picture-slider-widget/css"/>
 		</copy>
 
 		<copy todir="${build}/img">
 			<fileset dir="top-jumper/img"/>
+			<fileset dir="picture-slider-widget/img"/>
 		</copy>
 
 		<copy todir="${build}/libs">
 			<fileset dir="libs"/>
 		</copy>
 
-		<copy todir="${build}/foto">
-			<fileset dir="foto"/>
+		<copy todir="${build}/photo">
+			<fileset dir="photo"/>
 		</copy>
 
 
@@ -39,6 +41,7 @@
 	<target name="build" description="Concatenate all js files" depends="init">
 		<concat destfile="${build}/application.js" fixlastline="yes" encoding="UTF-8">
 			<filelist dir="js" files="Sandbox.js,Sandbox-Log.js"/>
+			<filelist dir="picture-slider-widget" files="picture-slider.js"/>
 			<filelist dir="top-jumper" files="top-jumper.js"/>
 
 			<filelist dir="js" files="navigator.js, resume.js"/>
@@ -64,6 +67,7 @@
 	<target name="compile_templates">
 		<concat destfile="${build}/templates.html" fixlastline="yes" encoding="UTF-8">
 			<fileset dir="top-jumper/tmpl"/>
+			<fileset dir="picture-slider-widget/tmpl"/>
 		</concat>
 
 		<loadfile property="templates" srcFile="${build}/templates.html" encoding="UTF-8"/>

@@ -2,13 +2,17 @@
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 13px;
 }
+.sectionTitle {
+	font-weight: bold;
+	margin-top: 25px;
+}
 .subsection {
 	margin-top: 15px;
 	overflow: auto;
 	width: 100%;
 }
 .sectionContainer {
-	width: 30%;
+	width: 50%;
 	margin: 0 auto;
 }
 
@@ -17,8 +21,9 @@
 	float: left;
 }
 .subsectionValue {
-	width: 70%;
+	width: 65%;
 	float: left;
+	margin-left: 5%;
 }
 
 .navigation {
@@ -63,10 +68,16 @@
 	color: #FFC76D !important;
 }
 
-.fotoContainer {
+.photoContainer {
 	width: 200px;
 	float: left;
 }
-.foto {
+.photo {
 	max-width: 100%;
+}
+.photoSection{
+	overflow: auto;
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 25px;
 }
