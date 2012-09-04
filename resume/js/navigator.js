@@ -79,12 +79,9 @@ function Navigator(sb, navigationContainer, sectionContainer) {
 		{
 			for(var i = 0; i < len - 1; i +=1)
 			{
-				sb.log('top: ' + screenPos + ' i: ' + sortedSectionItems[i].top + ' i: ' + sortedSectionItems[i + 1].top);
 				if(screenPos >= sortedSectionItems[i].top && screenPos < sortedSectionItems[i + 1].top)
 				{
 					elem = sortedSectionItems[i].elem;
-					sb.log('top: ' + sortedSectionItems[i]);
-					sb.log(sortedSectionItems[i]);
 					break;
 				}
 			}

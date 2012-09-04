@@ -36,6 +36,8 @@
 	border: 5px solid
 	#555;
 	background: url("../img/loading.gif") no-repeat center center gray;
+	overflow: hidden;
+
 	/*-moz-border-radius: 20px;*/
 	/*-webkit-border-radius: 20px;*/
 	/*border-radius: 20px;*/

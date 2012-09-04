@@ -39,7 +39,6 @@ function TopJumper (sb, rootDom) {
 	};
 
 	$(document).scroll(function(eventObject) {
-		sb.log('scroll');
 		that.updateView();
 	});
 
