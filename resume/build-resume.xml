@@ -16,13 +16,6 @@
 
 		<copy file="${pageName}" tofile="${build}/${pageName}"/>
 
-		<copy todir="${build}/css">
-			<fileset dir="css"/>
-			<fileset dir="top-jumper/css"/>
-			<fileset dir="picture-slider-widget/css"/>
-			<fileset dir="print-button-widget/css"/>
-		</copy>
-
 		<copy todir="${build}/img">
 			<fileset dir="top-jumper/img"/>
 			<fileset dir="picture-slider-widget/img"/>
@@ -35,8 +28,15 @@
 		<copy todir="${build}/photo">
 			<fileset dir="photo"/>
 		</copy>
+	</target>
 
-
+	<target name="add_css">
+		<concat destfile="${build}/css/result.css" fixlastline="yes" encoding="UTF-8">
+			<fileset dir="css" excludes="print.css"/>
+			<fileset dir="top-jumper/css"/>
+			<fileset dir="picture-slider-widget/css"/>
+			<fileset dir="print-button-widget/css"/>
+		</concat>
 	</target>
 
 	<target name="build" description="Concatenate all js files" depends="init">
@@ -48,7 +48,9 @@
 
 			<filelist dir="js" files="navigator.js, resume.js"/>
 		</concat>
+	</target>
 
+	<target name="compile_js_debug">
 		<exec error="${build}/errors.txt" dir="${build}" executable="java" failonerror="true">
 			<arg line="-jar '${env.CLOSURE_COMPILER}'/compiler.jar --compilation_level WHITESPACE_ONLY --formatting=pretty_print --js application.js --js_output_file js/application-compiled.js"/>
 		</exec>
@@ -58,13 +60,16 @@
 		</delete>
 	</target>
 
-<!--
-	<target name="set_path">
-		<replace dir="${build}" includes="*.html" value="." encoding="UTF-8">
-			<replacetoken>{{PathToHtml}}</replacetoken>
-		</replace>
+	<target name="compile_js_release">
+		<exec error="${build}/errors.txt" dir="${build}" executable="java" failonerror="true">
+			<arg line="-jar '${env.CLOSURE_COMPILER}'/compiler.jar --compilation_level SIMPLE_OPTIMIZATIONS --js application.js --js_output_file js/application-compiled.js"/>
+		</exec>
+
+		<delete>
+			<fileset dir="${build}" includes="application.js,errors.txt"/>
+		</delete>
 	</target>
--->
+
 
 	<target name="compile_templates">
 		<concat destfile="${build}/templates.html" fixlastline="yes" encoding="UTF-8">
@@ -76,7 +81,7 @@
 		<loadfile property="templates" srcFile="${build}/templates.html" encoding="UTF-8"/>
 
 		<replace file="${build}/${pageName}" value="${templates}" encoding="UTF-8">
-			<replacetoken>{{Templates}}</replacetoken>
+			<replacetoken>&lt;!--{{Templates}}--&gt;</replacetoken>
 		</replace>
 
 		<delete>
@@ -88,15 +93,6 @@
 		<delete dir="${build}" />
 	</target>
 
-	<target name="release" depends="init, build, compile_templates"/>
-
-
-
-
-	<!--
-	<target name="clean" description="clean up" >
-		<delete dir="${build}"/>
-		<delete dir="${dist}"/>
-	</target>
-	-->
+	<target name="release"	depends="init, add_css, build, compile_js_release, compile_templates"/>
+	<target name="debug"	depends="init, add_css, build, compile_js_debug, compile_templates"/>
 </project>
