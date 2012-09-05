@@ -37,6 +37,8 @@
 			<fileset dir="picture-slider-widget/css"/>
 			<fileset dir="print-button-widget/css"/>
 		</concat>
+
+		<copy file="css/print.css" tofile="${build}/css/print.css"/>
 	</target>
 
 	<target name="build" description="Concatenate all js files" depends="init">

@@ -1,0 +1,28 @@
+/*Отступы вокруг страницы*/
+@page {
+	margin: 15px;
+}
+* {
+	color: black !important;
+	background: white !important;
+}
+body {
+	font: 12pt "Times New Roman", "TimesNR", Times, serif;
+}
+
+.print {
+	display: block;
+}
+.noPrint {
+	display: none !important;
+}
+
+.printContentArea {
+	width: 100% !important;
+}
+.section {
+	page-break-after:always;
+}
+.subsection {
+	page-break-inside: avoid;
+}
